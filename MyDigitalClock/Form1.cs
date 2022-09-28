@@ -33,12 +33,13 @@ namespace MyDigitalClock
         {
             SoundPlayer sp = new SoundPlayer(@"C:\Users\scorp\Downloads\SpongeBobProductionMusicTomfoolery.wav");
             sp.Play();
+
         }
 
         private void muteButton_Click(object sender, EventArgs e)
         {
             SoundPlayer sp = new SoundPlayer(@"C:\Users\scorp\Downloads\SpongeBobProductionMusicTomfoolery.wav");
-                sp.Stop();
+            sp.Stop();
             playButton.Enabled = true;
         }
     }
