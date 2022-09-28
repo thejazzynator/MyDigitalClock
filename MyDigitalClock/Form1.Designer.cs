@@ -30,8 +30,11 @@ namespace MyDigitalClock
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.playButton = new System.Windows.Forms.Button();
+            this.muteButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,12 +49,34 @@ namespace MyDigitalClock
             this.label1.Text = "00:00:00";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // playButton
+            // 
+            this.playButton.Image = ((System.Drawing.Image)(resources.GetObject("playButton.Image")));
+            this.playButton.Location = new System.Drawing.Point(56, 170);
+            this.playButton.Name = "playButton";
+            this.playButton.Size = new System.Drawing.Size(122, 76);
+            this.playButton.TabIndex = 3;
+            this.playButton.UseVisualStyleBackColor = true;
+            this.playButton.Click += new System.EventHandler(this.playButton_Click);
+            // 
+            // muteButton
+            // 
+            this.muteButton.Image = ((System.Drawing.Image)(resources.GetObject("muteButton.Image")));
+            this.muteButton.Location = new System.Drawing.Point(648, 170);
+            this.muteButton.Name = "muteButton";
+            this.muteButton.Size = new System.Drawing.Size(119, 76);
+            this.muteButton.TabIndex = 4;
+            this.muteButton.UseVisualStyleBackColor = true;
+            this.muteButton.Click += new System.EventHandler(this.muteButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.muteButton);
+            this.Controls.Add(this.playButton);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Clock";
@@ -65,6 +90,8 @@ namespace MyDigitalClock
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button playButton;
+        private System.Windows.Forms.Button muteButton;
     }
 }
 

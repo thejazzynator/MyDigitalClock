@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,6 +27,19 @@ namespace MyDigitalClock
         private void Form1_Load(object sender, EventArgs e)
         {
            label1.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+
+        private void playButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer sp = new SoundPlayer(@"C:\Users\scorp\Downloads\SpongeBobProductionMusicTomfoolery.wav");
+            sp.Play();
+        }
+
+        private void muteButton_Click(object sender, EventArgs e)
+        {
+            SoundPlayer sp = new SoundPlayer(@"C:\Users\scorp\Downloads\SpongeBobProductionMusicTomfoolery.wav");
+                sp.Stop();
+            playButton.Enabled = true;
         }
     }
 }
